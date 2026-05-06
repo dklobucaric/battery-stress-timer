@@ -463,15 +463,27 @@ assets/worker.js   Web Worker workload
 
 ---
 
-## TO DO
+## Live site
+
+https://timer.dd-lab.hr/
+
+---
+
+## TO DO / Features
 
 This project intentionally avoids frameworks and external dependencies.
 
-It is built with:
-
 - If admin password is lost enable fallback then change password, remove old password box, just add/change password if in fallback mode
--
-- Learn vibe code better 
+- CSV export from the admin dashboard
+- Delete/archive old test records
+- Better browser detection for Opera and other Chromium-based browsers
+- Optional battery/history charts
+- Nginx hardening example
+- Add optional public read-only results page
+- Add automatic cleanup/archive for old test records
+- Configurable stress profiles from the admin panel
+- More tested browser/device combinations
+- Learn to vibe code better 
 
 The goal is to keep the app easy to host, inspect, modify and run on simple shared or self-hosted PHP environments.
 
