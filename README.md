@@ -51,7 +51,7 @@ It is especially useful for comparing devices under similar conditions, for exam
 
 ## Screenshots
 
-```markdown
+
 ![Start screen](screenshots/index.png)
 ![Start test](screenshots/start_test.png)
 ![Stop test](screenshots/stop_test.png)
@@ -59,7 +59,7 @@ It is especially useful for comparing devices under similar conditions, for exam
 ![Admin panel](screenshots/admin_panel.png)
 ![Admin panel - test detail](screenshots/admin_panel_detail.png)
 ![Admin panel - password change](screenshots/admin_panel_password_change.png)
-```
+
 
 ---
 
