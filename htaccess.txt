@@ -1,0 +1,64 @@
+# ----------------------------------------------------------------------
+# DD-Lab Battery Stress Timer - Apache .htaccess
+# ----------------------------------------------------------------------
+# Basic production hardening.
+#
+# Vibe code by Dalibor Klobučarić & my friend ChatGPT
+# ----------------------------------------------------------------------
+
+Options -Indexes
+
+DirectoryIndex index.php
+
+# ----------------------------------------------------------------------
+# Block sensitive project files
+# ----------------------------------------------------------------------
+
+<FilesMatch "^(config|db|db_test)\.php$">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(sql|bak|backup|old|orig|save|swp|ini|log|sh|env)$">
+    Require all denied
+</FilesMatch>
+
+# Block dotfiles: .git, .env, .htpasswd, etc.
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# Disable dangerous HTTP methods
+# ----------------------------------------------------------------------
+
+<LimitExcept GET POST HEAD>
+    Require all denied
+</LimitExcept>
+
+# ----------------------------------------------------------------------
+# Security headers
+# ----------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Permitted-Cross-Domain-Policies "none"
+
+    # Permissions policy:
+    # We do not need camera/mic/location/payment/etc.
+    # Battery API is not controlled here.
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), bluetooth=()"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Optional HTTPS redirect
+# ----------------------------------------------------------------------
+# Enable only on production with valid HTTPS.
+# If you are behind a proxy/CDN, test carefully before enabling.
+#
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} !=on
+#     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>

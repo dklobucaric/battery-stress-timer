@@ -1,0 +1,654 @@
+/*
+|--------------------------------------------------------------------------
+| Battery Stress Timer - Styles
+|--------------------------------------------------------------------------
+|
+| Version: 1.0.0
+|
+| Vibe code by Dalibor Klobučarić & my friend ChatGPT
+|
+|--------------------------------------------------------------------------
+*/
+
+:root {
+    color-scheme: light;
+
+    --bg: #f4f4f4;
+    --card: #ffffff;
+    --text: #111111;
+    --muted: #666666;
+    --border: #dddddd;
+    --black: #000000;
+    --soft: #f7f7f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.start-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.start-shell {
+    width: 100%;
+    max-width: 760px;
+}
+
+.start-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 34px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.brand-kicker {
+    display: inline-block;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 10px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+}
+
+.lead {
+    max-width: 620px;
+    margin: 18px 0 28px;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+.start-form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+input,
+select {
+    width: 100%;
+    font: inherit;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+    border-radius: 14px;
+    padding: 13px 14px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--black);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.profile-description {
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.profile-list {
+    display: grid;
+    gap: 8px;
+    margin: 8px 0 18px;
+}
+
+.profile-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 12px;
+    align-items: start;
+    padding: 10px 12px;
+    background: var(--soft);
+    border: 1px solid #eeeeee;
+    border-radius: 14px;
+    font-size: 0.9rem;
+}
+
+.profile-row strong {
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+}
+
+.profile-row span {
+    color: var(--muted);
+}
+
+.start-button {
+    margin-top: 4px;
+    width: 100%;
+    border: 0;
+    border-radius: 18px;
+    padding: 17px 18px;
+    background: var(--black);
+    color: #fff;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        opacity 0.12s ease;
+}
+
+.start-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.start-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.recommendations {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+}
+
+.recommend-title {
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.recommend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 8px;
+}
+
+.recommend-grid span {
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+    font-size: 0.84rem;
+    background: var(--soft);
+    border: 1px solid #eeeeee;
+    border-radius: 999px;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+.warning {
+    margin: 20px 0 0;
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.45;
+}
+
+.footer {
+    margin-top: 24px;
+    color: #777777;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+}
+
+@media (max-width: 560px) {
+    .start-page {
+        padding: 12px;
+        align-items: stretch;
+    }
+
+    .start-card {
+        border-radius: 22px;
+        padding: 24px;
+    }
+
+    .profile-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+}
+.field-hint {
+    margin: -4px 0 8px;
+    color: var(--muted);
+    font-size: 0.84rem;
+    line-height: 1.4;
+}
+/*
+|--------------------------------------------------------------------------
+| Running test screen
+|--------------------------------------------------------------------------
+*/
+
+.test-page {
+    min-height: 100vh;
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+    animation: ddlabBatteryGradient 120s ease-in-out infinite;
+}
+
+@keyframes ddlabBatteryGradient {
+    0% {
+        background: #000000;
+    }
+
+    12% {
+        background: #1a0033;
+    }
+
+    24% {
+        background: #002b66;
+    }
+
+    36% {
+        background: #004d40;
+    }
+
+    48% {
+        background: #4d3300;
+    }
+
+    60% {
+        background: #ffffff;
+    }
+
+    72% {
+        background: #b8b8b8;
+    }
+
+    86% {
+        background: #222222;
+    }
+
+    100% {
+        background: #000000;
+    }
+}
+
+.test-shell {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(16px, 3vw, 40px);
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.16), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.18), transparent 36%);
+}
+
+.timer-panel {
+    width: min(1180px, 100%);
+    padding: clamp(22px, 4vw, 52px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 34px;
+    background: rgba(0, 0, 0, 0.34);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+    text-align: center;
+}
+
+.test-topline {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.74);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.test-label {
+    margin: 0 auto 22px;
+    max-width: 860px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.timer-display {
+    margin: 10px 0 28px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "zero" 1;
+    letter-spacing: -0.08em;
+    line-height: 0.95;
+    text-shadow:
+        0 0 20px rgba(255, 255, 255, 0.20),
+        0 10px 36px rgba(0, 0, 0, 0.32);
+}
+
+#timerMain {
+    font-size: clamp(4rem, 14vw, 13rem);
+    font-weight: 800;
+}
+
+.timer-centi {
+    font-size: clamp(1.8rem, 5vw, 5rem);
+    font-weight: 700;
+    opacity: 0.78;
+    letter-spacing: -0.06em;
+}
+
+.telemetry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0 auto;
+}
+
+.telemetry-card {
+    min-height: 82px;
+    display: grid;
+    align-content: center;
+    gap: 6px;
+    padding: 14px 12px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.telemetry-label {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.telemetry-card strong {
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+    font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.profile-runtime-info {
+    margin: 18px auto 0;
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.test-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 26px;
+}
+
+.secondary-action,
+.danger-action {
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-weight: 800;
+    cursor: pointer;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+}
+
+.secondary-action {
+    background: rgba(255, 255, 255, 0.92);
+    color: #000;
+}
+
+.danger-action {
+    background: #ff2f2f;
+    color: #fff;
+}
+
+.secondary-action:hover,
+.danger-action:hover {
+    transform: translateY(-1px);
+}
+
+.test-footer {
+    margin-top: 26px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 0.76rem;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+}
+
+.stop-modal[hidden] {
+    display: none;
+}
+
+.stop-modal {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.62);
+    z-index: 9999;
+}
+
+.stop-modal-card {
+    width: min(460px, 100%);
+    padding: 26px;
+    border-radius: 24px;
+    background: #fff;
+    color: #111;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+}
+
+.stop-modal-card h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+}
+
+.stop-modal-card p {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
+}
+
+.stop-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.test-stopped .test-page,
+body.test-stopped {
+    animation-play-state: paused;
+}
+
+body.test-stopped .timer-panel {
+    outline: 2px solid rgba(255, 255, 255, 0.28);
+}
+
+body.test-stopped .test-label::after {
+    content: " · stopped";
+    color: #ffdddd;
+}
+
+@media (max-width: 900px) {
+    .telemetry-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .test-topline {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 560px) {
+    .test-page {
+        overflow: auto;
+    }
+
+    .test-shell {
+        align-items: stretch;
+    }
+
+    .timer-panel {
+        border-radius: 24px;
+        padding: 22px;
+    }
+
+    .telemetry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timer-display {
+        letter-spacing: -0.05em;
+    }
+}
+/*
+|--------------------------------------------------------------------------
+| Success / back button
+|--------------------------------------------------------------------------
+*/
+
+.test-actions .success-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-weight: 800;
+    cursor: pointer;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+    background: #20c46b;
+    color: #fff;
+    line-height: 1;
+    box-shadow: 0 10px 24px rgba(32, 196, 107, 0.22);
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        opacity 0.12s ease;
+}
+
+.test-actions .success-action:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(32, 196, 107, 0.32);
+}
+
+.test-actions .success-action:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.test-actions .success-action[hidden] {
+    display: none;
+}
