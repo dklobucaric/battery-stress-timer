@@ -51,13 +51,19 @@ It is especially useful for comparing devices under similar conditions, for exam
 
 ## Screenshots
 
-
+Start screen
 ![Start screen](screenshots/index.png)
+Start test
 ![Start test](screenshots/start_test.png)
+Stop test
 ![Stop test](screenshots/stop_test.png)
+Admin login
 ![Admin login](screenshots/admin_panel_login.png)
+Admin panel
 ![Admin panel](screenshots/admin_panel.png)
+Admin panel - test detail
 ![Admin panel - test detail](screenshots/admin_panel_detail.png)
+Admin panel - password change
 ![Admin panel - password change](screenshots/admin_panel_password_change.png)
 
 
