@@ -52,13 +52,13 @@ It is especially useful for comparing devices under similar conditions, for exam
 ## Screenshots
 
 ```markdown
-![Start screen](img/index.png)
-![Start test](img/start_test.png)
-![Stop test](img/stop_test.png)
-![Admin login](img/admin_panel_login.png)
-![Admin panel](img/admin_panel.png)
-![Admin panel - test detail](img/admin_panel_detail.png)
-![Admin panel - password change](img/admin_panel_password_change.png)
+![Start screen](screenshots/index.png)
+![Start test](screenshots/start_test.png)
+![Stop test](screenshots/stop_test.png)
+![Admin login](screenshots/admin_panel_login.png)
+![Admin panel](screenshots/admin_panel.png)
+![Admin panel - test detail](screenshots/admin_panel_detail.png)
+![Admin panel - password change](screenshots/admin_panel_password_change.png)
 ```
 
 ---
@@ -443,36 +443,17 @@ assets/worker.js   Web Worker workload
 
 ---
 
-## Development notes
+## TO DO
 
 This project intentionally avoids frameworks and external dependencies.
 
 It is built with:
 
-- PHP
-- MySQL/MariaDB
-- Vanilla JavaScript
-- Web Workers
-- CSS animations
+- If admin password is lost enable fallback then change password, remove old password box, just add/change password if in fallback mode
+-
+- Learn vibe code better 
 
 The goal is to keep the app easy to host, inspect, modify and run on simple shared or self-hosted PHP environments.
-
----
-
-## Suggested GitHub topics
-
-```text
-php
-javascript
-mysql
-battery-test
-benchmark
-web-worker
-browser
-stress-test
-self-hosted
-admin-dashboard
-```
 
 ---
 
