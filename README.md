@@ -360,6 +360,7 @@ The default profiles are:
 
 | Profile | Description | Workload |
 |---|---|---|
+| No load | just the timer | workload is off |
 | Light | Low CPU bursts, mostly display/timer test | 5s workload every 60s |
 | Medium | Balanced CPU + display stress | 15s workload every 60s |
 | High | Heavier CPU workload | 40s workload every 60s |

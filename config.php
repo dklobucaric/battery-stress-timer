@@ -52,6 +52,14 @@ return [
     ],
 
     'profiles' => [
+        'no_load' => [
+            'label' => 'No Load, just timer',
+            'description' => 'Timer only with animated background, battery telemetry and server logging. No CPU workload.',
+            'workload_enabled' => false,
+            'worker_max' => 0,
+            'workload_interval_seconds' => 0,
+            'workload_duration_seconds' => 0,
+        ],
         'light' => [
             'label' => 'Light',
             'description' => 'Low CPU bursts, mostly display/timer test',

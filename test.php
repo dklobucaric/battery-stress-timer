@@ -253,11 +253,14 @@ if ($testLabel === '') {
         const profileKey = window.DDLAB_TEST_CONFIG.profileKey || 'medium';
         const profileConfig = window.DDLAB_TEST_CONFIG.profile || {};
 
-        const workloadIntervalSeconds = Number(profileConfig.workload_interval_seconds || 60);
-        const workloadDurationSeconds = Number(profileConfig.workload_duration_seconds || 15);
-        const workloadWorkerMax = Number(profileConfig.worker_max || 4);
-        const workloadBatchSize = getBatchSizeForProfile(profileKey);
-        const workloadWorkerCount = calculateWorkerCount(workloadWorkerMax);
+        const workloadEnabled = profileConfig.workload_enabled !== false;
+
+        const workloadIntervalSeconds = Number(profileConfig.workload_interval_seconds ?? 60);
+        const workloadDurationSeconds = Number(profileConfig.workload_duration_seconds ?? 15);
+        const workloadWorkerMax = Number(profileConfig.worker_max ?? 4);
+
+        const workloadBatchSize = workloadEnabled ? getBatchSizeForProfile(profileKey) : 0;
+        const workloadWorkerCount = workloadEnabled ? calculateWorkerCount(workloadWorkerMax) : 0;
 
         function pad2(value) {
             return String(value).padStart(2, '0');
@@ -502,26 +505,33 @@ if ($testLabel === '') {
         }
 
         function startWorkloadScheduler() {
-            if (!window.Worker) {
-                workloadStatus.textContent = 'Web Worker unavailable';
-                return;
-            }
+                    if (!workloadEnabled) {
+                        workloadInitialized = true;
+                        workloadStatus.textContent = 'disabled / timer only';
+                        cyclesCompleted.textContent = '0';
+                    return;
+                    }
 
-            if (workloadInitialized) {
-                return;
-            }
+                    if (!window.Worker) {
+                        workloadStatus.textContent = 'Web Worker unavailable';
+                    return;
+                    }
+
+                    if (workloadInitialized) {
+                    return;
+                }
 
             workloadInitialized = true;
 
-            try {
-                createWorkloadWorkers();
+                    try {
+                        createWorkloadWorkers();
 
-                workloadStatus.textContent = `idle (${workloadWorkerCount} workers)`;
-                workloadBurstTimer = setTimeout(startWorkloadBurst, 1500);
+                        workloadStatus.textContent = `idle (${workloadWorkerCount} workers)`;
+                        workloadBurstTimer = setTimeout(startWorkloadBurst, 1500);
 
-            } catch (error) {
-                workloadStatus.textContent = 'worker error';
-            }
+                    } catch (error) {
+                        workloadStatus.textContent = 'worker error';
+                    }
         }
 
         function createWorkloadWorkers() {
